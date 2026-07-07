@@ -1,5 +1,73 @@
 ==================
-Inject Directive
+@page Directive
+==================
+@page
+
+---
+
+(document
+  (razor_directive
+    (directive_page))
+  (text
+    (raw_text)))
+
+==================
+@page Directive with Route
+==================
+@page "/counter"
+
+---
+
+(document
+  (razor_directive
+    (directive_page))
+  (text
+    (raw_text)))
+
+==================
+@model Directive
+==================
+@model CounterModel
+
+---
+
+(document
+  (razor_directive
+    (directive_model
+      (type_reference)))
+  (text
+    (raw_text)))
+
+==================
+@using Directive
+==================
+@using Microsoft.AspNetCore.Components
+
+---
+
+(document
+  (razor_directive
+    (directive_using
+      (namespace_reference)))
+  (text
+    (raw_text)))
+
+==================
+@namespace Directive
+==================
+@namespace MyApp.Pages
+
+---
+
+(document
+  (razor_directive
+    (directive_namespace
+      (namespace_reference)))
+  (text
+    (raw_text)))
+
+==================
+@inject Directive
 ==================
 @inject ILogger<Counter> Logger
 
@@ -12,10 +80,11 @@ Inject Directive
         (type_arguments
           (type_reference)))
       (identifier)))
-  (text))
+  (text
+    (raw_text)))
 
 ==================
-Inject Directive with Generics
+@inject with Multiple Generics
 ==================
 @inject Dictionary<string, int> MyDict
 
@@ -29,4 +98,162 @@ Inject Directive with Generics
           (type_reference)
           (type_reference)))
       (identifier)))
-  (text))
+  (text
+    (raw_text)))
+
+==================
+@inherits Directive
+==================
+@inherits ComponentBase
+
+---
+
+(document
+  (razor_directive
+    (directive_inherits
+      (type_reference)))
+  (text
+    (raw_text)))
+
+==================
+@implements Directive
+==================
+@implements IDisposable
+
+---
+
+(document
+  (razor_directive
+    (directive_implements
+      (type_reference)))
+  (text
+    (raw_text)))
+
+==================
+@layout Directive
+==================
+@layout MainLayout
+
+---
+
+(document
+  (razor_directive
+    (directive_layout
+      (identifier)))
+  (text
+    (raw_text)))
+
+==================
+@attribute Directive
+==================
+@attribute [Authorize]
+
+---
+
+(document
+  (razor_directive
+    (directive_attribute
+      (attribute_content)))
+  (text
+    (raw_text)))
+
+==================
+@section Directive
+==================
+@section Scripts {
+    <script src="app.js"></script>
+}
+
+---
+
+(document
+  (razor_directive
+    (directive_section
+      (identifier)
+      (razor_text)
+      (html_element
+        (html_start_tag
+          (tag_name)
+          (html_attribute
+            (attribute_name)
+            (attribute_value
+              (quoted_attribute_value
+                (attribute_content)))))
+        (html_end_tag
+          (tag_name)))
+      (razor_text)))
+  (text
+    (raw_text)))
+
+==================
+@functions Directive
+==================
+@functions {
+    private int count = 0;
+}
+
+---
+
+(document
+  (razor_directive
+    (directive_functions
+      (csharp_code)))
+  (text
+    (raw_text)))
+
+==================
+@code Directive
+==================
+@code {
+    private int count = 0;
+}
+
+---
+
+(document
+  (razor_directive
+    (directive_code
+      (csharp_code)))
+  (text
+    (raw_text)))
+
+==================
+@typeparam Directive
+==================
+@typeparam TItem
+
+---
+
+(document
+  (razor_directive
+    (directive_typeparam
+      (identifier)))
+  (text
+    (raw_text)))
+
+==================
+@rendermode Directive
+==================
+@rendermode RenderMode.InteractiveServer
+
+---
+
+(document
+  (razor_directive
+    (directive_rendermode
+      (identifier)))
+  (text
+    (raw_text)))
+
+==================
+@preservewhitespace Directive
+==================
+@preservewhitespace true
+
+---
+
+(document
+  (razor_directive
+    (directive_preservewhitespace))
+  (text
+    (raw_text)))

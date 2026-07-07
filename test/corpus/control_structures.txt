@@ -1,0 +1,191 @@
+==================
+@if Statement
+==================
+@if (true) {
+    <p>Hello</p>
+}
+
+---
+
+(document
+  (razor_if
+    (csharp_expression)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text))
+  (text
+    (raw_text)))
+
+==================
+@if / @else Statement
+==================
+@if (true) {
+    <p>Yes</p>
+} else {
+    <p>No</p>
+}
+
+---
+
+(document
+  (razor_if
+    (csharp_expression)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text)
+    (razor_else
+      (razor_text)
+      (html_element
+        (html_start_tag
+          (tag_name))
+        (text
+          (raw_text))
+        (html_end_tag
+          (tag_name)))
+      (razor_text)))
+  (text
+    (raw_text)))
+
+==================
+@foreach Statement
+==================
+@foreach (var item in items) {
+    <li>@item.Name</li>
+}
+
+---
+
+(document
+  (razor_foreach
+    (csharp_foreach_declaration)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (implicit_expression
+        (csharp_member_access))
+      (html_end_tag
+        (tag_name)))
+    (razor_text))
+  (text
+    (raw_text)))
+
+==================
+@for Statement
+==================
+@for (int i = 0; i < 10; i++) {
+    <p>@i</p>
+}
+
+---
+
+(document
+  (razor_for
+    (csharp_for_declaration)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (implicit_expression
+        (csharp_member_access))
+      (html_end_tag
+        (tag_name)))
+    (razor_text))
+  (text
+    (raw_text)))
+
+==================
+@while Statement
+==================
+@while (condition) {
+    <p>Looping</p>
+}
+
+---
+
+(document
+  (razor_while
+    (csharp_expression)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text))
+  (text
+    (raw_text)))
+
+==================
+@try / @catch Statement
+==================
+@try {
+    <p>Try</p>
+} catch (Exception ex) {
+    <p>Catch</p>
+}
+
+---
+
+(document
+  (razor_try
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text)
+    (razor_catch
+      (csharp_catch_declaration)
+      (razor_text)
+      (html_element
+        (html_start_tag
+          (tag_name))
+        (text
+          (raw_text))
+        (html_end_tag
+          (tag_name)))
+      (razor_text)))
+  (text
+    (raw_text)))
+
+==================
+@lock Statement
+==================
+@lock (myLock) {
+    <p>Locked</p>
+}
+
+---
+
+(document
+  (razor_lock
+    (csharp_expression)
+    (razor_text)
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text))
+  (text
+    (raw_text)))

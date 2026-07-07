@@ -1,0 +1,71 @@
+==================
+Explicit Expression
+==================
+<div>@(counter + 1)</div>
+
+---
+
+(document
+  (html_element
+    (html_start_tag
+      (tag_name))
+    (explicit_expression
+      (csharp_expression))
+    (html_end_tag
+      (tag_name)))
+  (text
+    (raw_text)))
+
+==================
+Implicit Expression
+==================
+<div>@Model.Name</div>
+
+---
+
+(document
+  (html_element
+    (html_start_tag
+      (tag_name))
+    (implicit_expression
+      (csharp_member_access))
+    (html_end_tag
+      (tag_name)))
+  (text
+    (raw_text)))
+
+==================
+Simple Implicit Expression
+==================
+<p>@count</p>
+
+---
+
+(document
+  (html_element
+    (html_start_tag
+      (tag_name))
+    (implicit_expression
+      (csharp_member_access))
+    (html_end_tag
+      (tag_name)))
+  (text
+    (raw_text)))
+
+==================
+Implicit Expression with Member Chain
+==================
+<p>@Model.Items.Count</p>
+
+---
+
+(document
+  (html_element
+    (html_start_tag
+      (tag_name))
+    (implicit_expression
+      (csharp_member_access))
+    (html_end_tag
+      (tag_name)))
+  (text
+    (raw_text)))

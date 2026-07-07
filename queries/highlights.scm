@@ -93,7 +93,6 @@
 
 ; ==================== CODE BLOCKS ====================
 (code_block
-  "{" @punctuation.bracket
   "}" @punctuation.bracket)
 
 (directive_functions
@@ -142,6 +141,12 @@
   "<" @punctuation.bracket
   (tag_name) @tag
   "/>" @punctuation.bracket)
+
+; HTML void elements (area, br, hr, img, input, etc.)
+(html_void_element
+  "<" @punctuation.bracket
+  (tag_name) @tag
+  ">" @punctuation.bracket)
 
 ; Special tag names (Blazor components)
 (tag_name) @tag.component

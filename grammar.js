@@ -12,7 +12,6 @@ module.exports = grammar({
   name: 'razor',
 
   externals: $ => [
-    $._implicit_expression_start,
     $._code_block_start,
     $.raw_text,
   ],
@@ -22,9 +21,8 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.razor_directive, $.implicit_expression],
-    [$.html_attribute, $.razor_directive],
     [$.type_reference],
+    [$.html_start_tag, $.html_void_element],
   ],
 
   inline: $ => [
@@ -61,6 +59,7 @@ module.exports = grammar({
 
     _html_node: $ => choice(
       $._common_node,
+      $.html_void_element,
       $.text,
     ),
 
@@ -202,8 +201,7 @@ module.exports = grammar({
 
     // ==================== CODE BLOCKS ====================
     code_block: $ => seq(
-      '@',
-      '{',
+      $._code_block_start,
       optional($.csharp_code),
       '}'
     ),
@@ -279,11 +277,18 @@ module.exports = grammar({
       '}'
     ),
 
-    razor_case: $ => seq(
-      'case',
-      $.csharp_expression,
-      ':',
-      repeat($._razor_node)
+    razor_case: $ => choice(
+      seq(
+        'case',
+        $.csharp_expression,
+        ':',
+        repeat($._razor_node)
+      ),
+      seq(
+        'default',
+        ':',
+        repeat($._razor_node)
+      )
     ),
 
     razor_try: $ => seq(
@@ -384,6 +389,13 @@ module.exports = grammar({
       '/>'
     ),
 
+    html_void_element: $ => seq(
+      '<',
+      $.tag_name,
+      repeat($.html_attribute),
+      '>'
+    ),
+
     html_attribute: $ => choice(
       seq(
         $.attribute_name,
@@ -429,7 +441,7 @@ module.exports = grammar({
 
     unquoted_attribute_value: $ => /[^\s"'=<>`]+/,
 
-    attribute_content: $ => /[^"'\n]*/,
+    attribute_content: $ => /[^"'\n\]]*/,
 
     tag_name: $ => /[a-zA-Z][a-zA-Z0-9]*/,
 
@@ -447,7 +459,7 @@ module.exports = grammar({
       seq('{', optional($.csharp_code), '}')
     )),
     
-    csharp_expression: $ => /[^\n;){]+/,
+    csharp_expression: $ => /[^\n;)}]+/,
     
     csharp_member_access: $ => /[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*/,
     
@@ -486,7 +498,7 @@ module.exports = grammar({
     ),
 
     // ==================== TEXT ====================
-    text: $ => /[^@<]+/,
+    text: $ => $.raw_text,
 
     razor_text: $ => /[^@<}]+/,
   }

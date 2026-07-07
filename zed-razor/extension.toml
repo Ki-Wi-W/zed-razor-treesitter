@@ -1,6 +1,6 @@
 id = "razor"
 name = "Razor & Blazor"
-description = "Enterprise-grade syntax highlighting for ASP.NET Razor Pages and Blazor components"
+description = "Syntax highlighting for ASP.NET Razor Pages and Blazor components"
 version = "1.0.0"
 schema_version = 1
 authors = ["Your Name <your.email@company.com>"]
@@ -8,6 +8,5 @@ repository = "https://github.com/yourusername/zed-razor"
 languages = ["languages/razor"]
 
 [grammars.razor]
-repository = "file:///C:/Users/pc-1/Documents/trae_projects/tree-sitter-razor"
-rev = "e92ba4a0fd22142b96d15f9210260d0e65aec642"
-
+repository = "https://github.com/yourusername/tree-sitter-razor"
+rev = "HEAD"
