@@ -130,6 +130,9 @@
 (parameter_list) @variable.parameter
 
 ; ==================== DOCTYPE ====================
+(html_doctype
+  "<!" @punctuation.bracket
+  ">" @punctuation.bracket)
 (html_doctype) @keyword.directive
 
 ; ==================== HTML ELEMENTS ====================
