@@ -129,6 +129,9 @@
 
 (parameter_list) @variable.parameter
 
+; ==================== DOCTYPE ====================
+(html_doctype) @keyword.directive
+
 ; ==================== HTML ELEMENTS ====================
 ; Tags
 (html_start_tag
