@@ -9,4 +9,4 @@ languages = ["languages/razor"]
 
 [grammars.razor]
 repository = "https://github.com/Ki-Wi-W/zed-razor-treesitter"
-rev = "HEAD"
+rev = "main"
