@@ -100,6 +100,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "html_doctype"
+        },
+        {
+          "type": "SYMBOL",
           "name": "text"
         }
       ]
@@ -621,6 +625,10 @@
               "name": "razor_if"
             },
             {
+              "type": "SYMBOL",
+              "name": "razor_else_if"
+            },
+            {
               "type": "SEQ",
               "members": [
                 {
@@ -639,6 +647,54 @@
                   "value": "}"
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    "razor_else_if": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "csharp_expression"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_razor_node"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "razor_else"
+            },
+            {
+              "type": "BLANK"
             }
           ]
         }
@@ -685,7 +741,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "@for"
+          "value": "@"
+        },
+        {
+          "type": "STRING",
+          "value": "for"
         },
         {
           "type": "STRING",
@@ -1423,16 +1483,8 @@
               "value": "\""
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "attribute_content"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "PATTERN",
+              "value": "[^\"]*"
             },
             {
               "type": "STRING",
@@ -1448,16 +1500,8 @@
               "value": "'"
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "attribute_content"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "PATTERN",
+              "value": "[^']*"
             },
             {
               "type": "STRING",
@@ -1473,7 +1517,7 @@
     },
     "attribute_content": {
       "type": "PATTERN",
-      "value": "[^\"'\\n\\]]*"
+      "value": "[^\"'\\n\\]]+"
     },
     "tag_name": {
       "type": "PATTERN",
@@ -1507,6 +1551,35 @@
     "html_comment_content": {
       "type": "PATTERN",
       "value": "[^-]+(-[^-]+)*"
+    },
+    "html_doctype": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<!"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[A-Za-z]+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^>]+"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        }
+      ]
     },
     "csharp_code": {
       "type": "REPEAT1",
@@ -1547,11 +1620,11 @@
     },
     "csharp_expression": {
       "type": "PATTERN",
-      "value": "[^\\n;)}]+"
+      "value": "[^\\n;)]+"
     },
     "csharp_member_access": {
       "type": "PATTERN",
-      "value": "[a-zA-Z_][a-zA-Z0-9_]*(\\.[a-zA-Z_][a-zA-Z0-9_]*)*"
+      "value": "[a-zA-Z_][a-zA-Z0-9_]*(?:\\.[a-zA-Z_][a-zA-Z0-9_]*|\\[[^\\]]*\\])*"
     },
     "csharp_foreach_declaration": {
       "type": "PATTERN",
@@ -1708,8 +1781,8 @@
       "name": "raw_text"
     },
     "razor_text": {
-      "type": "PATTERN",
-      "value": "[^@<}]+"
+      "type": "SYMBOL",
+      "name": "raw_text"
     }
   },
   "extras": [

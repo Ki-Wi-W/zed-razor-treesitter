@@ -64,11 +64,6 @@
     "fields": {}
   },
   {
-    "type": "csharp_member_access",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "csharp_using_declaration",
     "named": true,
     "fields": {}
@@ -435,6 +430,10 @@
           "named": true
         },
         {
+          "type": "html_doctype",
+          "named": true
+        },
+        {
           "type": "html_element",
           "named": true
         },
@@ -563,6 +562,11 @@
     }
   },
   {
+    "type": "html_doctype",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "html_element",
     "named": true,
     "fields": {},
@@ -580,6 +584,10 @@
         },
         {
           "type": "html_comment",
+          "named": true
+        },
+        {
+          "type": "html_doctype",
           "named": true
         },
         {
@@ -756,17 +764,7 @@
   {
     "type": "quoted_attribute_value",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "attribute_content",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "razor_attribute_value",
@@ -1325,6 +1323,105 @@
           "named": true
         },
         {
+          "type": "razor_else_if",
+          "named": true
+        },
+        {
+          "type": "razor_for",
+          "named": true
+        },
+        {
+          "type": "razor_foreach",
+          "named": true
+        },
+        {
+          "type": "razor_if",
+          "named": true
+        },
+        {
+          "type": "razor_lock",
+          "named": true
+        },
+        {
+          "type": "razor_switch",
+          "named": true
+        },
+        {
+          "type": "razor_text",
+          "named": true
+        },
+        {
+          "type": "razor_try",
+          "named": true
+        },
+        {
+          "type": "razor_using",
+          "named": true
+        },
+        {
+          "type": "razor_while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "razor_else_if",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "csharp_expression",
+          "named": true
+        },
+        {
+          "type": "explicit_expression",
+          "named": true
+        },
+        {
+          "type": "html_comment",
+          "named": true
+        },
+        {
+          "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_self_closing_element",
+          "named": true
+        },
+        {
+          "type": "implicit_expression",
+          "named": true
+        },
+        {
+          "type": "razor_comment",
+          "named": true
+        },
+        {
+          "type": "razor_delegate",
+          "named": true
+        },
+        {
+          "type": "razor_directive",
+          "named": true
+        },
+        {
+          "type": "razor_do",
+          "named": true
+        },
+        {
+          "type": "razor_else",
+          "named": true
+        },
+        {
           "type": "razor_for",
           "named": true
         },
@@ -1838,6 +1935,21 @@
     }
   },
   {
+    "type": "razor_text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "raw_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "razor_try",
     "named": true,
     "fields": {},
@@ -2209,6 +2321,10 @@
     "named": false
   },
   {
+    "type": "<!",
+    "named": false
+  },
+  {
     "type": "<!--",
     "named": false
   },
@@ -2258,10 +2374,6 @@
   },
   {
     "type": "@do",
-    "named": false
-  },
-  {
-    "type": "@for",
     "named": false
   },
   {
@@ -2389,6 +2501,10 @@
     "named": true
   },
   {
+    "type": "csharp_member_access",
+    "named": true
+  },
+  {
     "type": "default",
     "named": false
   },
@@ -2405,6 +2521,10 @@
     "named": false
   },
   {
+    "type": "for",
+    "named": false
+  },
+  {
     "type": "html_comment_content",
     "named": true
   },
@@ -2413,15 +2533,15 @@
     "named": true
   },
   {
+    "type": "if",
+    "named": false
+  },
+  {
     "type": "namespace_reference",
     "named": true
   },
   {
     "type": "raw_text",
-    "named": true
-  },
-  {
-    "type": "razor_text",
     "named": true
   },
   {

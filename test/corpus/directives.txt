@@ -170,18 +170,19 @@
   (razor_directive
     (directive_section
       (identifier)
-      (razor_text)
+      (razor_text
+        (raw_text))
       (html_element
         (html_start_tag
           (tag_name)
           (html_attribute
             (attribute_name)
             (attribute_value
-              (quoted_attribute_value
-                (attribute_content)))))
+              (quoted_attribute_value))))
         (html_end_tag
           (tag_name)))
-      (razor_text)))
+      (razor_text
+        (raw_text))))
   (text
     (raw_text)))
 

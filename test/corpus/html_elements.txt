@@ -14,8 +14,7 @@ Basic HTML Element
       (html_attribute
         (attribute_name)
         (attribute_value
-          (quoted_attribute_value
-            (attribute_content)))))
+          (quoted_attribute_value))))
     (text
       (raw_text))
     (html_element
@@ -110,8 +109,7 @@ Razor Directive Attribute
       (html_attribute
         (attribute_name)
         (attribute_value
-          (quoted_attribute_value
-            (attribute_content)))))
+          (quoted_attribute_value))))
     (text
       (raw_text))
     (html_end_tag

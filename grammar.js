@@ -60,6 +60,7 @@ module.exports = grammar({
     _html_node: $ => choice(
       $._common_node,
       $.html_void_element,
+      $.html_doctype,
       $.text,
     ),
 
@@ -222,8 +223,20 @@ module.exports = grammar({
       'else',
       choice(
         $.razor_if,
+        $.razor_else_if,
         seq('{', repeat($._razor_node), '}')
       )
+    ),
+
+    razor_else_if: $ => seq(
+      'if',
+      '(',
+      $.csharp_expression,
+      ')',
+      '{',
+      repeat($._razor_node),
+      '}',
+      optional($.razor_else)
     ),
 
     razor_foreach: $ => seq(
@@ -237,7 +250,8 @@ module.exports = grammar({
     ),
 
     razor_for: $ => seq(
-      '@for',
+      '@',
+      'for',
       '(',
       $.csharp_for_declaration,
       ')',
@@ -435,13 +449,13 @@ module.exports = grammar({
     ),
 
     quoted_attribute_value: $ => choice(
-      seq('"', optional($.attribute_content), '"'),
-      seq("'", optional($.attribute_content), "'")
+      seq('"', /[^"]*/, '"'),
+      seq("'", /[^']*/, "'")
     ),
 
     unquoted_attribute_value: $ => /[^\s"'=<>`]+/,
 
-    attribute_content: $ => /[^"'\n\]]*/,
+    attribute_content: $ => /[^"'\n\]]+/,
 
     tag_name: $ => /[a-zA-Z][a-zA-Z0-9]*/,
 
@@ -453,15 +467,22 @@ module.exports = grammar({
 
     html_comment_content: $ => /[^-]+(-[^-]+)*/,
 
+    html_doctype: $ => seq(
+      '<!',
+      /[A-Za-z]+/,
+      optional(/[^>]+/),
+      '>'
+    ),
+
     // ==================== C# PLACEHOLDERS ====================
     csharp_code: $ => repeat1(choice(
       /[^{}]+/,
       seq('{', optional($.csharp_code), '}')
     )),
     
-    csharp_expression: $ => /[^\n;)}]+/,
+    csharp_expression: $ => /[^\n;)]+/,
     
-    csharp_member_access: $ => /[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*/,
+    csharp_member_access: $ => /[a-zA-Z_][a-zA-Z0-9_]*(?:\.[a-zA-Z_][a-zA-Z0-9_]*|\[[^\]]*\])*/,
     
     csharp_foreach_declaration: $ => /[^)]+/,
     
@@ -500,6 +521,6 @@ module.exports = grammar({
     // ==================== TEXT ====================
     text: $ => $.raw_text,
 
-    razor_text: $ => /[^@<}]+/,
+    razor_text: $ => $.raw_text,
   }
 });

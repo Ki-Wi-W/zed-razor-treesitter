@@ -10,7 +10,8 @@
 (document
   (razor_if
     (csharp_expression)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -18,7 +19,8 @@
         (raw_text))
       (html_end_tag
         (tag_name)))
-    (razor_text))
+    (razor_text
+      (raw_text)))
   (text
     (raw_text)))
 
@@ -36,7 +38,8 @@
 (document
   (razor_if
     (csharp_expression)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -44,9 +47,11 @@
         (raw_text))
       (html_end_tag
         (tag_name)))
-    (razor_text)
+    (razor_text
+      (raw_text))
     (razor_else
-      (razor_text)
+      (razor_text
+        (raw_text))
       (html_element
         (html_start_tag
           (tag_name))
@@ -54,7 +59,64 @@
           (raw_text))
         (html_end_tag
           (tag_name)))
-      (razor_text)))
+      (razor_text
+        (raw_text))))
+  (text
+    (raw_text)))
+
+==================
+@if / else if Statement (no @ on else if)
+==================
+@if (isLoggedIn) {
+    <p>Welcome</p>
+} else if (isGuest) {
+    <p>Guest</p>
+} else {
+    <p>Anonymous</p>
+}
+
+---
+
+(document
+  (razor_if
+    (csharp_expression)
+    (razor_text
+      (raw_text))
+    (html_element
+      (html_start_tag
+        (tag_name))
+      (text
+        (raw_text))
+      (html_end_tag
+        (tag_name)))
+    (razor_text
+      (raw_text))
+    (razor_else
+      (razor_else_if
+        (csharp_expression)
+        (razor_text
+          (raw_text))
+        (html_element
+          (html_start_tag
+            (tag_name))
+          (text
+            (raw_text))
+          (html_end_tag
+            (tag_name)))
+        (razor_text
+          (raw_text))
+        (razor_else
+          (razor_text
+            (raw_text))
+          (html_element
+            (html_start_tag
+              (tag_name))
+            (text
+              (raw_text))
+            (html_end_tag
+              (tag_name)))
+          (razor_text
+            (raw_text))))))
   (text
     (raw_text)))
 
@@ -70,7 +132,8 @@
 (document
   (razor_foreach
     (csharp_foreach_declaration)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -78,7 +141,8 @@
         (csharp_member_access))
       (html_end_tag
         (tag_name)))
-    (razor_text))
+    (razor_text
+      (raw_text)))
   (text
     (raw_text)))
 
@@ -94,7 +158,8 @@
 (document
   (razor_for
     (csharp_for_declaration)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -102,7 +167,8 @@
         (csharp_member_access))
       (html_end_tag
         (tag_name)))
-    (razor_text))
+    (razor_text
+      (raw_text)))
   (text
     (raw_text)))
 
@@ -118,7 +184,8 @@
 (document
   (razor_while
     (csharp_expression)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -126,7 +193,8 @@
         (raw_text))
       (html_end_tag
         (tag_name)))
-    (razor_text))
+    (razor_text
+      (raw_text)))
   (text
     (raw_text)))
 
@@ -143,7 +211,8 @@
 
 (document
   (razor_try
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -151,10 +220,12 @@
         (raw_text))
       (html_end_tag
         (tag_name)))
-    (razor_text)
+    (razor_text
+      (raw_text))
     (razor_catch
       (csharp_catch_declaration)
-      (razor_text)
+      (razor_text
+        (raw_text))
       (html_element
         (html_start_tag
           (tag_name))
@@ -162,7 +233,8 @@
           (raw_text))
         (html_end_tag
           (tag_name)))
-      (razor_text)))
+      (razor_text
+        (raw_text))))
   (text
     (raw_text)))
 
@@ -178,7 +250,8 @@
 (document
   (razor_lock
     (csharp_expression)
-    (razor_text)
+    (razor_text
+      (raw_text))
     (html_element
       (html_start_tag
         (tag_name))
@@ -186,6 +259,7 @@
         (raw_text))
       (html_end_tag
         (tag_name)))
-    (razor_text))
+    (razor_text
+      (raw_text)))
   (text
     (raw_text)))

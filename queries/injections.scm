@@ -18,6 +18,10 @@
   (csharp_expression) @injection.content)
   (#set! injection.language "csharp"))
 
+((razor_else_if
+  (csharp_expression) @injection.content)
+  (#set! injection.language "csharp"))
+
 ((razor_while
   (csharp_expression) @injection.content)
   (#set! injection.language "csharp"))
@@ -53,8 +57,8 @@
 ((html_element
   (html_start_tag
     (tag_name) @_tag_name)
-  (#eq? @_tag_name "style"))
-  @injection.content
+  (text) @injection.content)
+  (#eq? @_tag_name "style")
   (#set! injection.language "css"))
 
 ; ==================== JAVASCRIPT INJECTION ====================
@@ -62,6 +66,6 @@
 ((html_element
   (html_start_tag
     (tag_name) @_tag_name)
-  (#eq? @_tag_name "script"))
-  @injection.content
+  (text) @injection.content)
+  (#eq? @_tag_name "script")
   (#set! injection.language "javascript"))

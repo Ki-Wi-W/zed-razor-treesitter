@@ -76,7 +76,6 @@
 [
   "@if"
   "@foreach"
-  "@for"
   "@while"
   "@do"
   "@switch"
@@ -85,7 +84,12 @@
   "@lock"
 ] @keyword.control
 
+(razor_for
+  "@" @keyword.control
+  "for" @keyword.control)
+
 "else" @keyword.control
+"if" @keyword.control
 "case" @keyword.control
 "catch" @keyword.control
 "finally" @keyword.control
