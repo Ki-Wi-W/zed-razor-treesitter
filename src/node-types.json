@@ -728,14 +728,10 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "html_attribute",
-          "named": true
-        },
-        {
-          "type": "tag_name",
           "named": true
         }
       ]
@@ -2473,6 +2469,10 @@
     "named": false
   },
   {
+    "type": "area",
+    "named": false
+  },
+  {
     "type": "async",
     "named": false
   },
@@ -2485,11 +2485,23 @@
     "named": true
   },
   {
+    "type": "base",
+    "named": false
+  },
+  {
+    "type": "br",
+    "named": false
+  },
+  {
     "type": "case",
     "named": false
   },
   {
     "type": "catch",
+    "named": false
+  },
+  {
+    "type": "col",
     "named": false
   },
   {
@@ -2513,6 +2525,10 @@
     "named": false
   },
   {
+    "type": "embed",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
@@ -2522,6 +2538,10 @@
   },
   {
     "type": "for",
+    "named": false
+  },
+  {
+    "type": "hr",
     "named": false
   },
   {
@@ -2537,16 +2557,44 @@
     "named": false
   },
   {
+    "type": "img",
+    "named": false
+  },
+  {
+    "type": "input",
+    "named": false
+  },
+  {
+    "type": "link",
+    "named": false
+  },
+  {
+    "type": "meta",
+    "named": false
+  },
+  {
     "type": "namespace_reference",
     "named": true
+  },
+  {
+    "type": "param",
+    "named": false
   },
   {
     "type": "raw_text",
     "named": true
   },
   {
+    "type": "source",
+    "named": false
+  },
+  {
     "type": "tag_name",
     "named": true
+  },
+  {
+    "type": "track",
+    "named": false
   },
   {
     "type": "true",
@@ -2555,6 +2603,10 @@
   {
     "type": "unquoted_attribute_value",
     "named": true
+  },
+  {
+    "type": "wbr",
+    "named": false
   },
   {
     "type": "while",

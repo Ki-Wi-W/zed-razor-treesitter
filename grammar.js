@@ -405,7 +405,10 @@ module.exports = grammar({
 
     html_void_element: $ => seq(
       '<',
-      $.tag_name,
+      choice(
+        'area', 'base', 'br', 'col', 'embed', 'hr', 'img',
+        'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'
+      ),
       repeat($.html_attribute),
       '>'
     ),

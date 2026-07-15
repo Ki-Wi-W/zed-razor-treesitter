@@ -149,7 +149,6 @@
 ; HTML void elements (area, br, hr, img, input, etc.)
 (html_void_element
   "<" @punctuation.bracket
-  (tag_name) @tag
   ">" @punctuation.bracket)
 
 ; Special tag names (Blazor components)
