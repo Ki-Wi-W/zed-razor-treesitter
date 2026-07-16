@@ -85,7 +85,7 @@
 ] @keyword.control
 
 (razor_for
-  "@" @keyword.control
+  "@" @constant.control
   "for" @keyword.control)
 
 "else" @keyword.control
@@ -118,18 +118,18 @@
   ")" @punctuation.bracket)
 
 (implicit_expression
-  "@" @keyword
+  "@" @constant
   (csharp_member_access) @variable.member)
 
 ; Razor @Assets service — highlight as function
 (implicit_expression
-  "@" @keyword
+  "@" @constant
   (csharp_member_access) @function
   (#match? @function "^Assets"))
 
 ; Delegate expressions
 (razor_delegate
-  "@" @keyword
+  "@" @constant
   "async" @keyword
   "=>" @operator)
 
@@ -172,7 +172,7 @@
   (attribute_name) @attribute)
 
 (razor_directive_attribute
-  "@" @keyword
+  "@" @constant
   (attribute_name) @attribute)
 
 (attribute_value) @string
@@ -211,7 +211,7 @@
 ["\"" "'"] @punctuation.delimiter
 
 ; ==================== OPERATORS AND PUNCTUATION ====================
-"@" @keyword
+"@" @constant
 "=" @operator
 ":" @punctuation.delimiter
 
