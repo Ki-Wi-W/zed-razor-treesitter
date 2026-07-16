@@ -9,6 +9,10 @@
 ((csharp_expression) @injection.content
   (#set! injection.language "csharp"))
 
+; Member access expressions
+((csharp_member_access) @injection.content
+  (#set! injection.language "csharp"))
+
 ; Control structure conditions
 ((razor_if
   (csharp_expression) @injection.content)
