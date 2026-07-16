@@ -79,6 +79,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "html_end_tag"
+        },
+        {
+          "type": "SYMBOL",
           "name": "html_self_closing_element"
         },
         {
@@ -1855,6 +1859,9 @@
     [
       "html_start_tag",
       "html_void_element"
+    ],
+    [
+      "html_element"
     ]
   ],
   "precedences": [],

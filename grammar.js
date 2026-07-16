@@ -23,6 +23,7 @@ module.exports = grammar({
   conflicts: $ => [
     [$.type_reference],
     [$.html_start_tag, $.html_void_element],
+    [$.html_element],
   ],
 
   inline: $ => [
@@ -53,6 +54,7 @@ module.exports = grammar({
       $.razor_using,
       $.razor_lock,
       $.html_element,
+      $.html_end_tag,
       $.html_self_closing_element,
       $.html_comment,
     ),

@@ -297,6 +297,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -435,6 +439,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -810,6 +818,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -898,6 +910,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1004,6 +1020,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1208,6 +1228,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -1292,6 +1316,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1390,6 +1418,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -1478,6 +1510,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1572,6 +1608,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -1663,6 +1703,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -1751,6 +1795,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1846,6 +1894,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
@@ -1970,6 +2022,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -2069,6 +2125,10 @@
           "named": true
         },
         {
+          "type": "html_end_tag",
+          "named": true
+        },
+        {
           "type": "html_self_closing_element",
           "named": true
         },
@@ -2157,6 +2217,10 @@
         },
         {
           "type": "html_element",
+          "named": true
+        },
+        {
+          "type": "html_end_tag",
           "named": true
         },
         {
