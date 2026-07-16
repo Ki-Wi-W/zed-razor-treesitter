@@ -175,6 +175,10 @@
   "@" @operator
   (attribute_name) @attribute)
 
+; @Assets inside attribute values — highlight as function
+(quoted_attribute_value) @function
+  (#match? @function "@Assets")
+
 (attribute_value) @string
 
 (quoted_attribute_value
