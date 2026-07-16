@@ -30,13 +30,6 @@
   (csharp_expression) @injection.content)
   (#set! injection.language "csharp"))
 
-; Loop declarations
-((csharp_foreach_declaration) @injection.content
-  (#set! injection.language "csharp"))
-
-((csharp_for_declaration) @injection.content
-  (#set! injection.language "csharp"))
-
 ; Exception handling
 ((csharp_catch_declaration) @injection.content
   (#set! injection.language "csharp"))

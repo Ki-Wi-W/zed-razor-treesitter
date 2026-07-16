@@ -196,8 +196,8 @@
 ; ==================== C# EMBEDDED CODE ====================
 (csharp_expression) @embedded
 (csharp_member_access) @variable.member
-(csharp_foreach_declaration) @embedded
-(csharp_for_declaration) @embedded
+(csharp_foreach_declaration) @variable
+(csharp_for_declaration) @variable
 (csharp_catch_declaration) @embedded
 (csharp_using_declaration) @embedded
 
