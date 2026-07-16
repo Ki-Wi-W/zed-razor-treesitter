@@ -452,8 +452,8 @@ module.exports = grammar({
     ),
 
     quoted_attribute_value: $ => choice(
-      seq('"', /[^"]*/, '"'),
-      seq("'", /[^']*/, "'")
+      seq('"', /[^"\[]*(\[[^\]]*\][^"\[]*)*/, '"'),
+      seq("'", /[^'\[]*(\[[^\]]*\][^'\[]*)*/, "'")
     ),
 
     unquoted_attribute_value: $ => /[^\s"'=<>`]+/,
