@@ -121,6 +121,12 @@
   "@" @operator
   (csharp_member_access) @variable.member)
 
+; Razor @Assets service — highlight as function
+(implicit_expression
+  "@" @operator
+  (csharp_member_access) @function
+  (#match? @function "^Assets"))
+
 ; Delegate expressions
 (razor_delegate
   "@" @operator
